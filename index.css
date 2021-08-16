@@ -1,0 +1,298 @@
+/*ENTIRE PAGE - DEFAULTS*/
+* {
+    box-sizing: border-box;
+    font-family: 'Amatic SC', cursive;
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    font-size: 1.3rem;
+  }
+  
+  body {
+    height: 100vh;
+    background: #0099e0;
+  }
+  
+  #view {
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  
+  
+  .wager-title{
+    margin-top:0;
+  }
+  .question-container .question{
+    word-wrap: break-word;
+    padding-bottom:10px;
+  }
+  .point-value{
+    margin-bottom:20px;
+  }
+  .question-container,
+  .wager-container{
+    box-shadow:
+    whitesmoke 0 0px 10px 1px inset,
+    whitesmoke 0 0px 10px 1px;
+    padding:20px;
+    min-width: 50%;
+    max-width: 400px;
+    margin:auto;
+    text-align: center;
+    color:whitesmoke;
+    background:#123652;
+    border-radius: 40px;
+  }
+  .wager-max::before{
+    content:'Max:';
+  }
+  .ans-neg-box{
+    margin-bottom: 30px;
+  }
+  
+  #wager-amount{
+    border-radius: 10px;
+    color:crimson;
+    width:50px;
+  }
+  .wager-min::before{
+    content: 'Min:';
+  }
+  
+  
+  .answer{
+    background:crimson;
+    padding:.5rem;
+    border-radius: 10px;
+    margin:7px;
+    display: inline-block;
+    box-shadow:
+    whitesmoke 0 0px 10px 1px inset,
+    whitesmoke 0 0px 10px 1px;
+    text-align: center;
+    width:45%;
+  }
+  #quit {
+    border-radius: 50%;
+    padding: 30px;
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    background: crimson;
+  }
+  
+  #start-btn {
+    position: absolute;
+    color:crimson;
+    border-radius: 5px;
+    height: 75px;
+    width: 100px;
+    bottom: 10%;
+    right: 10%;
+    animation: infinite 1400ms breath;
+  }
+  .number:hover,
+  .answer:hover,
+  #quit,
+  button:hover{
+    cursor: pointer;
+  }
+  
+  .number:hover{
+    color:crimson;
+  }
+  #wager-amount:hover{
+    background: crimson;
+    color:whitesmoke;
+    border: 1px solid crimson;
+  }
+  
+  #player-area {
+    width: 100%;
+    text-align: center;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  #current-player {
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow:
+      whitesmoke 0 0px 10px 1px inset,
+      whitesmoke 0 0px 10px 1px;
+  }
+  #current-player::before{
+    content:'↝'
+  }
+  #current-player::after{
+    content:'↜'
+  }
+  .in-game-profile-picture{
+  height:40px;
+  width:40px;
+  
+  }
+  
+  .cloud-1 {
+    position: absolute;
+    animation: 85s infinite cloudsForward;
+    top:0;
+    left: 0px;
+    z-index: -1;
+  }
+  
+  .cloud-2 {
+    position: absolute;
+    animation: 55s infinite cloudsReverse;
+    right: 0px;
+    top: 200px;
+    z-index: -2;
+  }
+  
+  .cloud-3 {
+    position: absolute;
+    animation: 65s infinite cloudsForward;
+    left: 400px;
+    top: 300px;
+    z-index: -1;
+  }
+  
+  @keyframes cloudsForward {
+  
+    0%,
+    100% {}
+  
+    50% {
+      left: calc(100vw);
+    }
+  }
+  
+  @keyframes cloudsReverse {
+  
+    0%,
+    100% {}
+  
+    50% {
+      right: calc(100vw);
+    }
+  }
+  
+  .birds {
+    position: absolute;
+    z-index: -1;
+    animation: 3s infinite fly;
+  }
+  
+  @keyframes fly {
+  
+    0%,
+    100% {
+      left: 40%;
+      top: 30%;
+    }
+  
+    50% {
+      left: 30%;
+      top: 20%;
+    }
+  }
+  
+  #title span {
+    font-size: 4rem;
+  }
+  
+  #title span {
+    position: relative;
+    left: 100px;
+    color: crimson; 
+    margin:10px;
+  }
+  
+  .profile-picture {
+    border-radius: 50%;
+    margin-left: 25px;
+    /* border: 1px solid #ddd; */
+    width: 50px;
+  }
+  
+  .profile-picture:hover {
+    border: 1px solid white;
+  }
+  
+  input {
+    border-radius: 5px;
+    height: 2rem;
+    width: 30%;
+    margin: 5%;
+    border: 1px lightblue solid;
+    transition: 2s;
+    animation: infinite 1400ms rotate-color;
+  }
+  
+  @keyframes rotate-color {
+  
+    0%,
+    100% {
+      color: lightblue;
+    }
+  
+    50% {
+      height:1.95rem;
+      color: purple;
+    }
+  }
+  
+  #loading-screen {
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  /*CLUE BOXES*/
+  #game-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .clue {
+    text-align: center;
+    line-height: -15px;
+    min-height: 3rem;
+    height: auto;
+    border-radius: 5px;
+    padding: 5% 2%;
+    margin: 9% 1%;
+    background-color: #123652;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+  }
+  
+  .clue:nth-child(1) {
+    background: crimson;
+    line-height: -5px;
+    height: 4rem;
+  }
+  
+  .number {
+    padding:10px;
+  } 
+  .results{
+    width: 50%;
+    display: block;
+  }
+  #wager-amount{
+    margin: 0 20px;
+  }
+  
+  #winner{
+    font-size:5rem;
+    color:crimson;
+    margin:  0 auto;
+  }
